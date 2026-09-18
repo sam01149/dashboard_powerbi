@@ -4,9 +4,8 @@ MVP portal dengan satu alur: login → satu report Power BI.
 
 ## Menjalankan lokal
 
-1. Salin `.env.example` menjadi `.env.local`.
-2. Isi seluruh environment variable dengan nilai development yang aman.
-3. Jalankan `npm install` lalu `npm run dev`.
+1. Buat `.env.local` lokal (tidak pernah di-commit) dan isi seluruh environment variable yang diperlukan.
+2. Jalankan `npm install` lalu `npm run dev`.
 
 ## Konfigurasi login
 
@@ -29,5 +28,7 @@ node -e "const bcrypt=require('bcryptjs'); bcrypt.hash('GANTI_PASSWORD', 12).the
 
 ## Deployment Vercel
 
-Atur root directory project ke `dashboard`, lalu tambahkan seluruh variable dari `.env.example` di Vercel Project Settings → Environment Variables. Jangan gunakan `Publish to web` untuk report.
+Repository ini sudah memakai project root. Di Vercel, import repository lalu tambahkan variable berikut di **Project Settings → Environment Variables**: `PORTAL_USERS_CONFIG`, `SESSION_SECRET`, `ENTRA_TENANT_ID`, `ENTRA_CLIENT_ID`, `ENTRA_CLIENT_SECRET`, `POWERBI_WORKSPACE_ID`, dan `POWERBI_REPORT_ID`.
+
+Jangan memasukkan file `.env*` ke GitHub. Jangan gunakan `Publish to web` untuk report.
 
