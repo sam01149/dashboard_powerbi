@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
+import { ThemeToggle } from "../theme-toggle";
 
 const ReportEmbed = dynamic(
   () => import("./report-embed").then((module) => module.ReportEmbed),
@@ -46,7 +47,10 @@ export function DashboardClient({ username }: { username: string }) {
           <h1>Dashboard Talent</h1>
           <p>Masuk sebagai {username}</p>
         </div>
-        <button className="logout-button" type="button" onClick={logout}>Keluar</button>
+        <div className="header-actions">
+          <ThemeToggle />
+          <button className="logout-button" type="button" onClick={logout}>Keluar</button>
+        </div>
       </header>
       <section className="report-area" aria-label="Dashboard Power BI">
         <div className="report-frame">
