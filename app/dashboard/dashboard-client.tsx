@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
-import { ThemeToggle } from "../theme-toggle";
 
 const ReportEmbed = dynamic(
   () => import("./report-embed").then((module) => module.ReportEmbed),
@@ -48,7 +47,6 @@ export function DashboardClient({ username }: { username: string }) {
           <p>Masuk sebagai {username}</p>
         </div>
         <div className="header-actions">
-          <ThemeToggle />
           <button className="logout-button" type="button" onClick={logout}>Keluar</button>
         </div>
       </header>
