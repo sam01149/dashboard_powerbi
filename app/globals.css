@@ -28,7 +28,7 @@ body {
   font-family: "Nunito Sans", Nunito, Arial, sans-serif;
 }
 
-button, input { font: inherit; }
+button, input, .login-button { font: inherit; }
 
 .login-shell {
   display: grid;
@@ -96,6 +96,21 @@ button:hover { background: var(--accent-hover); }
 button:active { background: var(--accent-press); }
 button:disabled { cursor: wait; background: #c3b5fd; color: #ffffff; }
 .form-error { margin: -4px 0 0; color: var(--danger); font-size: .9rem; }
+.login-button {
+  display: grid;
+  min-height: 44px;
+  place-items: center;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: .875rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.login-button:hover { background: var(--accent-hover); }
+.login-button:active { background: var(--accent-press); }
+.login-button:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 
 .dashboard-shell { min-height: 100dvh; }
 .dashboard-header {

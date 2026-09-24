@@ -15,7 +15,7 @@ type EmbedConfiguration = {
   token: string;
 };
 
-export function DashboardClient({ username }: { username: string }) {
+export function DashboardClient({ name, email }: { name: string; email: string }) {
   const router = useRouter();
   const [configuration, setConfiguration] = useState<EmbedConfiguration | null>(null);
   const [error, setError] = useState("");
@@ -44,7 +44,7 @@ export function DashboardClient({ username }: { username: string }) {
       <header className="dashboard-header">
         <div>
           <h1>Dashboard Talent</h1>
-          <p>Masuk sebagai {username}</p>
+          <p>Masuk sebagai {name} ({email})</p>
         </div>
         <div className="header-actions">
           <button className="logout-button" type="button" onClick={logout}>Keluar</button>
